@@ -8,6 +8,7 @@
 
 Button                          KEYWORD1
 ButtonPullUp                    KEYWORD1
+Led                             KEYWORD1
 
 ########################################
 # Methods and Functions (KEYWORD2)     #
@@ -15,6 +16,12 @@ ButtonPullUp                    KEYWORD1
 
 # Button & ButtonPullUp
 read                            KEYWORD2
+
+# Led
+high                            KEYWORD2
+low                             KEYWORD2
+set                             KEYWORD2
+pwm                             KEYWORD2
 
 ########################################
 # Constants (LITERAL1)                 #
