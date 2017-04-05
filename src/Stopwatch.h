@@ -31,6 +31,10 @@ public:
         return time() >= ms;
     }
 
+    bool isMoreThanSec(const unsigned long sec) const {
+        return isMoreThan(sec * 1000);
+    }
+
 private:
     unsigned long startTime = 0;
 };
