@@ -20,16 +20,31 @@ public:
         pinMode(pin, OUTPUT);
     }
 
-    void enable() const {
+    void enable() {
         digitalWrite(pin, HIGH);
+        enabled = true;
     }
 
-    void disable() const {
+    void disable() {
         digitalWrite(pin, LOW);
+        enabled = false;
+    }
+
+    void set(bool state) {
+        state ? enable() : disable();
+    }
+
+    bool isEnabled() const {
+        return enabled;
+    }
+
+    const byte getPin() const {
+        return pin;
     }
 
 private:
     const byte pin;
+    bool enabled = false;
 };
 
 #endif
