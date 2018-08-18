@@ -34,6 +34,10 @@ public:
         state ? enable() : disable();
     }
 
+    void invert() {
+        set(!isEnabled());
+    }
+
     bool isEnabled() const {
         return enabled;
     }
