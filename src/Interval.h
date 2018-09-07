@@ -26,7 +26,9 @@ public:
     }
 
     void recalculate() {
-        msReady += interval;
+        while (msReady <= millis()) {
+            msReady += interval;
+        }
     }
 
     void startWithCurrentTime() {
