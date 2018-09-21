@@ -15,6 +15,8 @@
 class Stopwatch {
 public:
 
+    Stopwatch(unsigned long startTime = millis()) : startTime(startTime) {}
+
     void start() {
         startTime = millis();
     }
