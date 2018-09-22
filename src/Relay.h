@@ -16,17 +16,17 @@
  */
 class Relay {
 public:
-    Relay(const byte pin) : pin(pin) {
+    Relay(const byte pin, const byte enabledVoltage = HIGH) : pin(pin), enabledVoltage(enabledVoltage) {
         pinMode(pin, OUTPUT);
     }
 
     void enable() {
-        digitalWrite(pin, HIGH);
+        digitalWrite(pin, enabledVoltage);
         enabled = true;
     }
 
     void disable() {
-        digitalWrite(pin, LOW);
+        digitalWrite(pin, HIGH - enabledVoltage);
         enabled = false;
     }
 
@@ -48,6 +48,7 @@ public:
 
 private:
     const byte pin;
+    const byte enabledVoltage;
     bool enabled = false;
 };
 
