@@ -11,9 +11,12 @@
 
 #define BUTTON_PIN 2
 #define BUTTON_PULL_UP_PIN 3
+#define BUTTON_PULL_UP_PIN2     4
+#define BUTTON_PULL_UP_PIN2_GND 5
 
 Button button = Button(BUTTON_PIN);                            // create a default button with INPUT pin mode
 ButtonPullUp buttonPullUp = ButtonPullUp(BUTTON_PULL_UP_PIN);  // create the button with built in pull up resistor
+ButtonPullUp buttonPullUpWithGnd = ButtonPullUpWithGnd(BUTTON_PULL_UP_PIN2, BUTTON_PULL_UP_PIN2_GND);
 
 void setup() {
     Serial.begin(9600);
@@ -27,6 +30,10 @@ void loop() {
 
     if (buttonPullUp.read()) {                     // if button pressed (pin connected to ground)
         Serial.println("Button pull up pressed");  // send the message
+    }
+
+    if (buttonPullUpWithGnd.read()) {               // if button pressed (pin connected to ground)
+        Serial.println("Button pull up 2 pressed"); // send the message
     }
 
     delay(100);

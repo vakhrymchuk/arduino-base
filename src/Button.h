@@ -9,8 +9,6 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
-#include <Arduino.h>
-
 /**
  * Simple button implementation.
  * Signal is HIGH when button is enabled.
@@ -43,6 +41,19 @@ public :
 
     bool read() const final override {
         return !Button::read();
+    }
+};
+
+/**
+ * Like ButtonPullUp but with additional GND pin.
+ */
+class ButtonPullUpWithGnd : public ButtonPullUp {
+public :
+    ButtonPullUpWithGnd(const byte pin, const byte pinGnd) : ButtonPullUp(pin) {
+        pinMode(pin, INPUT_PULLUP);
+
+        pinMode(pinGnd, OUTPUT);
+        digitalWrite(pinGnd, LOW);
     }
 };
 
