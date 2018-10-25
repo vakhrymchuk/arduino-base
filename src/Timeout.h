@@ -15,7 +15,7 @@
 class Timeout {
 public:
 
-    Timeout(ulong msReady = 0) : msReady(msReady) {}
+    Timeout(unsigned long msReady = 0) : msReady(msReady) {}
 
     bool isReady() const {
         return millis() >= msReady;
