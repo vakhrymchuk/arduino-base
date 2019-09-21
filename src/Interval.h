@@ -15,7 +15,7 @@
 class Interval {
 public:
 
-    Interval(unsigned long interval) : interval(interval) { }
+    Interval(unsigned long interval) : interval(interval) {}
 
     bool isReady() {
         bool value = millis() >= msReady;
@@ -39,8 +39,16 @@ public:
         msReady = millis();
     }
 
+    unsigned long getInterval() const {
+        return interval;
+    }
+
+    void setInterval(unsigned long interval) {
+        this->interval = interval;
+    }
+
 private:
-    const unsigned long interval;
+    unsigned long interval;
     unsigned long msReady = 0;
 };
 
