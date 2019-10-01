@@ -8,6 +8,7 @@
 #define TIMEOUT_H
 
 #include <Arduino.h>
+#include "TimeUnit.h"
 
 /**
  * Create a single event that will be ready after timeout milliseconds.
@@ -15,22 +16,18 @@
 class Timeout {
 public:
 
-    Timeout(unsigned long msReady = 0) : msReady(msReady) {}
+    explicit Timeout(unsigned long msReady = 0) : msReady(msReady) {}
 
     bool isReady() const {
         return millis() >= msReady;
     }
 
-    void start(unsigned int timeout) {
-        msReady = millis() + timeout;
-    }
-
-    void startSec(unsigned int timeout) {
-        start(timeout * 1000);
+    void start(unsigned int timeout, const TimeUnit timeUnit = MS) {
+        msReady = millis() + timeout * MS;
     }
 
 protected:
-    unsigned long msReady = 0;
+    unsigned long msReady;
 };
 
 #endif

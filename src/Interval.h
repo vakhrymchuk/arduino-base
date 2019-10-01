@@ -8,6 +8,7 @@
 #define INTERVAL_H
 
 #include <Arduino.h>
+#include "TimeUnit.h"
 
 /**
  * Create event that should be run periodically over interval.
@@ -15,7 +16,7 @@
 class Interval {
 public:
 
-    Interval(unsigned long interval) : interval(interval) {}
+    explicit Interval(unsigned long interval, TimeUnit timeUnit = MS) : intervalMs(interval * timeUnit) {}
 
     bool isReady() {
         bool value = millis() >= msReady;
@@ -27,28 +28,28 @@ public:
 
     void recalculate() {
         while (msReady <= millis()) {
-            msReady += interval;
+            msReady += intervalMs;
         }
     }
 
     void startWithCurrentTime() {
-        msReady = millis() + interval;
+        msReady = millis() + intervalMs;
     }
 
     void startWithCurrentTimeEnabled() {
         msReady = millis();
     }
 
-    unsigned long getInterval() const {
-        return interval;
+    unsigned long getInterval(TimeUnit timeUnit = MS) const {
+        return intervalMs / timeUnit;
     }
 
-    void setInterval(unsigned long interval) {
-        this->interval = interval;
+    void setInterval(unsigned long interval, TimeUnit timeUnit = MS) {
+        this->intervalMs = interval * timeUnit;
     }
 
 private:
-    unsigned long interval;
+    unsigned long intervalMs;
     unsigned long msReady = 0;
 };
 

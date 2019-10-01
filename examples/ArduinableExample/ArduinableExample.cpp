@@ -4,12 +4,15 @@
 
 class ShowTime : public Arduinable {
 private:
-    Interval interval = Interval(1000);
+    Interval interval = Interval(1, SECOND);
 
 public:
     void loop() override {
         if (interval.isReady()) {
             Serial.println(millis());
+        }
+        if (millis() > 10000) {
+            interval.setInterval(5, SECOND);
         }
     }
 };

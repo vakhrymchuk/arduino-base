@@ -21,12 +21,12 @@ void setup() {
 
 void loop() {
 
-    if (stopwatch.time() > 2000) {            // time more than 2 seconds
-        stopwatch.start();                    // reset stopwatch
-    } else if (stopwatch.isMoreThan(1000)) {  // time more than 1 second
-        led.high();                           // enable led
+    if (stopwatch.time(SECOND) >= 2) {             // time more than 2 seconds
+        stopwatch.start();                         // reset stopwatch
+    } else if (stopwatch.isMoreThan(1, SECOND)) {  // time more than 1 second
+        led.high();                                // enable led
     } else {
-        led.low();                            // switch off led
+        led.low();                                 // switch off led
     }
 
 }

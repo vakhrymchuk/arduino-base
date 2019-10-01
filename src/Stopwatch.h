@@ -8,6 +8,7 @@
 #define STOPWATCH_H
 
 #include <Arduino.h>
+#include "TimeUnit.h"
 
 /**
  * Stopwatch to track time in milliseconds.
@@ -21,24 +22,20 @@ public:
         startTime = millis();
     }
 
-    unsigned long time() const {
-        return millis() - startTime;
+    unsigned long time(const TimeUnit timeUnit = MS) const {
+        return (millis() - startTime) / timeUnit;
     }
 
-    bool isLessThan(const unsigned long ms) const {
-        return time() <= ms;
+    bool isLessThan(const unsigned long value, const TimeUnit timeUnit = MS) const {
+        return time(timeUnit) <= value;
     }
 
-    bool isMoreThan(const unsigned long ms) const {
-        return time() >= ms;
-    }
-
-    bool isMoreThanSec(const unsigned long sec) const {
-        return isMoreThan(sec * 1000);
+    bool isMoreThan(const unsigned long value, const TimeUnit timeUnit = MS) const {
+        return time(timeUnit) >= value;
     }
 
 private:
-    unsigned long startTime = 0;
+    unsigned long startTime;
 };
 
 #endif

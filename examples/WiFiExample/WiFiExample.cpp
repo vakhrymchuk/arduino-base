@@ -4,7 +4,7 @@
 
 class WiFiExample : public DeviceWiFi {
 private:
-    Interval interval = Interval(2000);
+    Interval interval = Interval(2, SECOND);
 
 public:
 
