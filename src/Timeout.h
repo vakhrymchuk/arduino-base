@@ -16,14 +16,16 @@
 class Timeout {
 public:
 
-    explicit Timeout(unsigned long msReady = 0) : msReady(msReady) {}
+    explicit Timeout(unsigned long timeout = 0, const TimeUnit timeUnit = MS) {
+        start(timeout, MS);
+    }
 
     bool isReady() const {
         return millis() >= msReady;
     }
 
-    void start(unsigned int timeout, const TimeUnit timeUnit = MS) {
-        msReady = millis() + timeout * MS;
+    void start(unsigned long timeout, const TimeUnit timeUnit = MS) {
+        msReady = millis() + timeout * timeUnit;
     }
 
 protected:
