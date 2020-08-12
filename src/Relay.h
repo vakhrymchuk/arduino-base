@@ -20,8 +20,8 @@ public:
         pinMode(pin, OUTPUT);
     }
 
-    Relay(const byte pin, const byte basePin, const byte enabledVoltage = HIGH) : pin(pin),
-                                                                                  enabledVoltage(enabledVoltage) {
+    Relay(const byte pin, const byte basePin, const byte enabledVoltage) : pin(pin),
+                                                                           enabledVoltage(enabledVoltage) {
         pinMode(pin, OUTPUT);
         pinMode(basePin, OUTPUT);
         digitalWrite(basePin, HIGH - enabledVoltage);
