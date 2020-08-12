@@ -16,7 +16,7 @@ class Timeout {
 public:
 
     explicit Timeout(unsigned long timeout = 0, const TimeUnit timeUnit = MS) {
-        start(timeout, MS);
+        start(timeout, timeUnit);
     }
 
     bool isReady() const {
