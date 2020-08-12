@@ -4,8 +4,7 @@
  * Written by Valery Akhrymchuk
 *********************************************************************/
 
-#ifndef TIMEOUT_H
-#define TIMEOUT_H
+#pragma once
 
 #include <Arduino.h>
 #include "TimeUnit.h"
@@ -31,5 +30,3 @@ public:
 protected:
     unsigned long msReady;
 };
-
-#endif

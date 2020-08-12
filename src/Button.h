@@ -6,8 +6,7 @@
  * Written by Valery Akhrymchuk
 *********************************************************************/
 
-#ifndef BUTTON_H
-#define BUTTON_H
+#pragma once
 
 /**
  * Simple button implementation.
@@ -56,5 +55,3 @@ public :
         digitalWrite(pinGnd, LOW);
     }
 };
-
-#endif

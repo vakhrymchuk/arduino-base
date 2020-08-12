@@ -5,8 +5,7 @@
  * Written by Valery Akhrymchuk
 *********************************************************************/
 
-#ifndef LED_H
-#define LED_H
+#pragma once
 
 #include <Arduino.h>
 
@@ -39,5 +38,3 @@ public:
 private:
     const byte pin;
 };
-
-#endif

@@ -4,8 +4,7 @@
  * Written by Valery Akhrymchuk
 *********************************************************************/
 
-#ifndef INTERVAL_H
-#define INTERVAL_H
+#pragma once
 
 #include <Arduino.h>
 #include "TimeUnit.h"
@@ -52,5 +51,3 @@ private:
     unsigned long intervalMs;
     unsigned long msReady = 0;
 };
-
-#endif

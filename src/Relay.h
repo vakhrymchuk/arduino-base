@@ -5,8 +5,7 @@
  * Written by Valery Akhrymchuk
 *********************************************************************/
 
-#ifndef RELAY_H
-#define RELAY_H
+#pragma once
 
 #include <Arduino.h>
 
@@ -59,4 +58,3 @@ private:
     bool enabled = false;
 };
 
-#endif

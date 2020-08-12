@@ -21,7 +21,7 @@ void setup() {
 
 void loop() {
 
-    if (stopwatch.time(SECOND) >= 2) {             // time more than 2 seconds
+    if (stopwatch.time(SECOND) >= 2) {     // time more than 2 seconds
         stopwatch.start();                         // reset stopwatch
     } else if (stopwatch.isMoreThan(1, SECOND)) {  // time more than 1 second
         led.high();                                // enable led

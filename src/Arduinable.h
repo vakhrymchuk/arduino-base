@@ -1,5 +1,4 @@
-#ifndef ARDUINABLE_H
-#define ARDUINABLE_H
+#pragma once
 
 class Arduinable {
 public:
@@ -7,5 +6,3 @@ public:
     virtual void loop() = 0;
 
 };
-
-#endif

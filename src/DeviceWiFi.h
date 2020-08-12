@@ -1,5 +1,4 @@
-#ifndef SMARTHATA_DEVICEWIFI_H
-#define SMARTHATA_DEVICEWIFI_H
+#pragma once
 
 #include <ESP8266WiFi.h>
 #include "Arduinable.h"
@@ -75,5 +74,3 @@ private:
     }
 
 };
-
-#endif

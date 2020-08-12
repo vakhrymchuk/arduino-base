@@ -4,8 +4,7 @@
  * Written by Valery Akhrymchuk
 *********************************************************************/
 
-#ifndef ENABLED_INTERVAL_H
-#define ENABLED_INTERVAL_H
+#pragma once
 
 class EnabledInterval {
 public:
@@ -28,5 +27,3 @@ private:
     unsigned long enabledMs;
     unsigned long msStart = 0;
 };
-
-#endif

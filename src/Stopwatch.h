@@ -4,8 +4,7 @@
  * Written by Valery Akhrymchuk
 *********************************************************************/
 
-#ifndef STOPWATCH_H
-#define STOPWATCH_H
+#pragma once
 
 #include <Arduino.h>
 #include "TimeUnit.h"
@@ -37,5 +36,3 @@ public:
 private:
     unsigned long startTime;
 };
-
-#endif
